@@ -1,0 +1,45 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Сообщение отправлено{% endblock %}
+
+{% block content %}
+<div class="feedback-form">
+    <div class="alert alert-success">
+        <h4><i class="fa-regular fa-circle-check"></i>Сообщение отправлено!</h4>
+        <p class="mb-0">Спасибо за ваше обращение. Мы свяжемся с вами в ближайшее время.</p>
+    </div>
+    
+    <div class="success-card">
+        <div class="card-header">
+            <h5><i class="fa-regular fa-file-lines"></i>Ваши данные:</h5>
+        </div>
+        <div class="card-body">
+            <div style="display: flex; gap: 30px; margin-bottom: 20px;">
+                <div>
+                    <strong><i class="fa-regular fa-user"></i>Имя:</strong><br>
+                    {{ name }}
+                </div>
+                <div>
+                    <strong><i class="fa-regular fa-envelope"></i>Email:</strong><br>
+                    {{ email }}
+                </div>
+            </div>
+            <div>
+                <strong><i class="fa-regular fa-message"></i>Сообщение:</strong>
+                <div class="bg-light border rounded p-3 mt-2">
+                    {{ message|linebreaks }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <a href="{% url 'feedback' %}" class="btn btn-primary me-2">
+            <i class="fa-regular fa-paper-plane"></i>Отправить ещё сообщение
+        </a>
+        <a href="{% url 'home' %}" class="btn btn-outline-secondary">
+            <i class="fa-regular fa-house"></i>На главную
+        </a>
+    </div>
+</div>
+{% endblock %}

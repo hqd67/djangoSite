@@ -1,0 +1,207 @@
+body {
+    background: #2c2c2c;
+}
+
+aside {
+    float: left;
+    background: #181818;
+    width: 20%;
+    padding: 2,5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+aside img {
+    width: 80px;
+    float: left;
+}
+aside .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+}
+
+aside h3 {
+    margin-top: 100px;
+    font-size: 28px;
+}
+
+
+aside ul {list-style: none}
+aside ul li {
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    color: #fff;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
+}
+
+form {
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
+
+/* Стили для формы обратной связи */
+.feedback-form {
+    float: left;
+    color: #fff;
+    margin-top: 50px;
+    width: 75%;
+    padding: 0 20px;
+}
+
+.feedback-card {
+    background: #3c3c3c;
+    border: 1px solid #4d4d4d;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-header {
+    border-bottom: 2px solid #eb5959;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.feedback-header h2 {
+    color: #fff;
+    font-size: 28px;
+    margin: 0;
+}
+
+.feedback-header h2 i {
+    color: #eb5959;
+}
+
+.form-label {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    background: #2c2c2c;
+    border: 1px solid #4d4d4d;
+    color: #fff;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    background: #2c2c2c;
+    border-color: #eb5959;
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(235, 89, 89, 0.25);
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+.btn-primary {
+    background: #eb5959;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #d84a4a;
+    transform: scale(1.05);
+}
+
+.btn-outline-secondary {
+    border-color: #4d4d4d;
+    color: #fff;
+}
+
+.btn-outline-secondary:hover {
+    background: #4d4d4d;
+    border-color: #4d4d4d;
+    color: #fff;
+}
+
+/* Стили для алертов */
+.alert {
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+}
+
+.alert-danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+.alert-success {
+    background: #198754;
+    color: #fff;
+}
+
+.alert-success h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Стили для успешной отправки */
+.success-card {
+    background: #3c3c3c;
+    border: 1px solid #4d4d4d;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.success-card .card-header {
+    background: #4d4d4d;
+    border-bottom: 2px solid #eb5959;
+    padding: 15px 20px;
+}
+
+.success-card .card-body {
+    padding: 20px;
+}
+
+.bg-light {
+    background: #2c2c2c !important;
+    color: #fff;
+}
+
+/* Иконки в формах */
+.fa-regular, .fa-solid {
+    margin-right: 8px;
+    color: #eb5959;
+}
+
+
+
