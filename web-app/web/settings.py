@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'main',
     'news',
+    'blog',
     'feedback',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -129,3 +130,5 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
     "/var/www/static/",
 ]
+
+LOGOUT_REDIRECT_URL = "/"

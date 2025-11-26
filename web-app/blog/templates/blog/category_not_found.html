@@ -1,0 +1,23 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2 class="text-danger">Категория "{{ category }}" не найдена</h2>
+
+    <p>Возможно, вы ошиблись в названии категории.</p>
+
+    <a href="/articles/" class="btn btn-primary mt-3">Вернуться к статьям</a>
+
+    <hr>
+
+    <h4>Доступные категории:</h4>
+    {% if categories %}
+        {% for cat in categories %}
+            <a href="/articles/{{ cat }}/" class="btn btn-outline-primary btn-sm">{{ cat }}</a>
+        {% endfor %}
+    {% else %}
+        <p>Категорий пока нет.</p>
+    {% endif %}
+</div>
+{% endblock %}

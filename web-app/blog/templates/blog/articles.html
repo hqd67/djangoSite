@@ -1,0 +1,37 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+<h1>
+    Статьи 
+    {% if category %}
+        в категории "{{ category }}"
+    {% endif %}
+</h1>
+
+<div class="mb-4">
+    <a href="/articles/" class="btn btn-secondary btn-sm">Все категории</a>
+
+    {% for cat in categories %}
+        <a href="/articles/{{ cat }}/" class="btn btn-primary btn-sm">
+            {{ cat }}
+        </a>
+    {% endfor %}
+</div>
+
+{% if articles %}
+    {% for a in articles %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h3>
+                    <a href="{% url 'article_detail' a.id %}">{{ a.title }}</a>
+                </h3>
+
+                <p>{{ a.text|truncatewords:25 }}</p>
+                <p><b>Категория:</b> {{ a.category }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Нет статей.</p>
+{% endif %}
+{% endblock %}

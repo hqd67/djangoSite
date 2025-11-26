@@ -1,0 +1,38 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+
+<p>{{ article.text }}</p>
+<p><b>Категория:</b> {{ article.category }}</p>
+<p><b>Автор:</b> {{ article.user }}</p>
+
+<a href="{% url 'edit_article' article.id %}" class="btn btn-warning btn-sm">Редактировать</a>
+<a href="{% url 'delete_article' article.id %}" class="btn btn-danger btn-sm">Удалить</a>
+
+<hr>
+
+<h3>Комментарии</h3>
+
+{% if comments %}
+    {% for c in comments %}
+        <div class="border p-2 mb-2">
+            <b>{{ c.author_name }}</b>
+            <p>{{ c.text }}</p>
+            <small>{{ c.date }}</small>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Комментариев еще нет.</p>
+{% endif %}
+
+<hr>
+
+<h4>Добавить комментарий</h4>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success">Отправить</button>
+</form>
+
+{% endblock %}
