@@ -1,0 +1,82 @@
+### GET all articles
+GET http://127.0.0.1:8000/api/articles/
+Accept: application/json
+
+
+### CREATE article
+POST http://127.0.0.1:8000/api/articles/
+Content-Type: application/json
+
+{
+  "title": "Новая статья",
+  "text": "Текст статьи через REST Client",
+  "category": "IT",
+  "user": 1
+}
+
+
+### GET article by ID
+GET http://127.0.0.1:8000/api/articles/9/
+Accept: application/json
+
+
+### UPDATE article by ID
+PUT http://127.0.0.1:8000/api/articles/9/
+Content-Type: application/json
+
+{
+  "title": "Исправленный заголовок",
+  "text": "Новый текст"
+}
+
+
+### DELETE article by ID
+DELETE http://127.0.0.1:8000/api/articles/9/
+Accept: application/json
+
+
+### FILTER articles by category
+GET http://127.0.0.1:8000/api/articles/category/IT/
+Accept: application/json
+
+
+### SORT articles by date
+GET http://127.0.0.1:8000/api/articles/sort/date/
+Accept: application/json
+
+
+
+
+### GET all comments
+GET http://127.0.0.1:8000/api/comment/
+Accept: application/json
+
+
+### CREATE comment
+POST http://127.0.0.1:8000/api/comment/
+Content-Type: application/json
+
+{
+  "text": "Комментарий через REST Client",
+  "author_name": "Артем",
+  "article": 2
+}
+
+
+### GET comment by ID
+GET http://127.0.0.1:8000/api/comment/1/
+Accept: application/json
+
+
+### UPDATE comment by ID
+PUT http://127.0.0.1:8000/api/comment/1/
+Content-Type: application/json
+
+{
+  "text": "Обновлённый текст комментария"
+}
+
+
+### DELETE comment by ID
+DELETE http://127.0.0.1:8000/api/comment/5/
+Accept: application/json

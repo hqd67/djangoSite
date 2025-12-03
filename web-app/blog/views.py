@@ -11,6 +11,7 @@ from .forms import BlogLoginForm
 from .models import Article, User
 from .forms import ArticleForm, CommentForm, UserRegisterForm, BlogLoginForm
 from .utils import blog_login_required
+from django.contrib.auth import logout
 
 
 def articles_list(request):
@@ -146,3 +147,10 @@ def articles_by_category(request, category):
         "category": category,
         "categories": categories
     })
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
+
+
+
