@@ -14,12 +14,13 @@ def api_articles_list(request):
         return JsonResponse(data, safe=False)
 
     elif request.method == "POST":
+        user_id = request.user_id
         try:
             body = json.loads(request.body)
             title = body.get("title")
             text = body.get("text")
             category = body.get("category")
-            user_id = body.get("user")
+            
 
             if not (title and text and category and user_id):
                 return JsonResponse({"error": "Missing required fields"}, status=400)
@@ -47,6 +48,7 @@ def api_article_detail(request, id):
         return JsonResponse(model_to_dict(article))
 
     elif request.method == "PUT":
+        user_id = request.user_id
         try:
             body = json.loads(request.body)
 
@@ -62,6 +64,7 @@ def api_article_detail(request, id):
             return JsonResponse({"error": "Invalid JSON"}, status=400)
 
     elif request.method == "DELETE":
+        user_id = request.user_id
         article.delete()
         return JsonResponse({"success": True})
 
@@ -89,6 +92,7 @@ def api_comment_list(request):
         return JsonResponse(data, safe=False)
 
     elif request.method == "POST":
+        user_id = request.user_id
         try:
             body = json.loads(request.body)
             text = body.get("text")
@@ -121,6 +125,7 @@ def api_comment_detail(request, id):
         return JsonResponse(model_to_dict(comment))
 
     elif request.method == "PUT":
+        user_id = request.user_id
         try:
             body = json.loads(request.body)
             comment.text = body.get("text", comment.text)
@@ -133,5 +138,6 @@ def api_comment_detail(request, id):
             return JsonResponse({"error": "Invalid JSON"}, status=400)
 
     elif request.method == "DELETE":
+        user_id = request.user_id
         comment.delete()
         return JsonResponse({"success": True})

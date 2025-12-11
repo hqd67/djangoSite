@@ -1,0 +1,57 @@
+### 1. Получение access и refresh токена
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+  "email": "hhh@mail.ru",
+  "password": "2203"
+}
+
+
+
+
+
+### 2. Проверка работы access токена (GET статей)
+GET http://127.0.0.1:8000/api/articles/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjUzNDgzMDgsInR5cGUiOiJhY2Nlc3MifQ.W5eXAH44Z5ZwKQTWM5kfPEnRfX1reCawlQnbyS8p3LY
+
+
+
+### 3. Проверка защиты (POST без токена — должна быть ошибка)
+POST http://127.0.0.1:8000/api/articles/
+Content-Type: application/json
+
+{
+  "title": "Test",
+  "text": "Text",
+  "category": "IT"
+}
+
+
+
+### 4. Создание статьи с access токеном
+POST http://127.0.0.1:8000/api/articles/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjUzNDgzMDgsInR5cGUiOiJhY2Nlc3MifQ.W5eXAH44Z5ZwKQTWM5kfPEnRfX1reCawlQnbyS8p3LY
+
+{
+  "title": "Статья через REST Client",
+  "text": "Это проверка JWT через VS Code",
+  "category": "IT"
+}
+
+
+
+### 5. Обновление access токена через refresh
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+
+{
+  "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjU0MzQ0ODYsInR5cGUiOiJyZWZyZXNoIn0.VCChiNCh-s7BnORElzxIVdkg57_zoR8Hg05dsqVkajg"
+}
+
+
+
+### 6. Проверка работы нового access токена
+GET http://127.0.0.1:8000/api/articles/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjUzNDg0MDMsInR5cGUiOiJhY2Nlc3MifQ.KnnKDNM7d2q3uNL6RKPxGy24gvzMlGiu3QKzOkLpokY

@@ -132,3 +132,13 @@ STATICFILES_DIRS = [
 ]
 
 LOGOUT_REDIRECT_URL = "/"
+
+JWT_SECRET = "SUPER_SECRET_KEY_CHANGE_ME"
+JWT_ALGORITHM = "HS256"
+JWT_ACCESS_TTL = 300      # 5 минут
+JWT_REFRESH_TTL = 86400   # 1 день
+
+
+MIDDLEWARE += [
+    "blog.middleware.JWTMiddleware",
+]
