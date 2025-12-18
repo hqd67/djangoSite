@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Новости</h1>
+    <nav>
+        <a href="login.html">Вход</a>
+        <a href="create.html">Создать статью</a>
+        <button id="logoutBtn">Выйти</button>
+    </nav>
+</header>
+
+<section>
+    <button onclick="load()">Все</button>
+    <button onclick="load('IT')">IT</button>
+    <button onclick="load('general')">Общие</button>
+</section>
+
+<main id="articles"></main>
+
+<script type="module">
+import { getArticles } from "./js/articles.js";
+import { logout } from "./js/auth.js";
+import { isAuthenticated } from "./js/api.js";
+
+
+
+async function load(category) {
+    try {
+        const data = await getArticles(category);
+        const container = document.getElementById("articles");
+        container.innerHTML = "";
+
+        data.forEach(a => {
+            container.innerHTML += `
+                <article>
+                    <h3>${a.title}</h3>
+                    <p>${a.text}</p>
+                    <small>Категория: ${a.category}</small>
+                </article>
+            `;
+        });
+    } catch (e) {
+        alert("Load failed");
+        console.error(e);
+    }
+}
+
+document.getElementById("logoutBtn").onclick = logout;
+window.load = load;
+
+load();
+</script>
+
+</body>
+</html>

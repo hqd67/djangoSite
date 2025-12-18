@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание статьи</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Создать статью</h2>
+
+<input id="title" placeholder="Заголовок"><br>
+<textarea id="text" placeholder="Текст статьи"></textarea><br>
+<input id="category" placeholder="Категория (IT / general)"><br>
+<button id="createBtn">Создать</button>
+
+<script type="module">
+import { requireAuth } from "./js/api.js";
+import { createArticle } from "./js/create.js";
+
+requireAuth();
+
+document.getElementById("createBtn").onclick = async () => {
+    try {
+        await createArticle(title.value, text.value, category.value);
+        alert("Статья создана");
+        window.location.href = "index.html";
+    } catch (e) {
+        alert(e.message);
+    }
+};
+</script>
+
+</body>
+</html>

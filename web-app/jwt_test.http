@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ### 2. Проверка работы access токена (GET статей)
 GET http://127.0.0.1:8000/api/articles/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjUzNDgzMDgsInR5cGUiOiJhY2Nlc3MifQ.W5eXAH44Z5ZwKQTWM5kfPEnRfX1reCawlQnbyS8p3LY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjU0MjAzNDksInR5cGUiOiJhY2Nlc3MifQ.qERK4s_FtFXXssftJP76PZ5mEgw_335yHSMDNqqhxd4
 
 
 
@@ -32,7 +32,7 @@ Content-Type: application/json
 ### 4. Создание статьи с access токеном
 POST http://127.0.0.1:8000/api/articles/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjUzNDgzMDgsInR5cGUiOiJhY2Nlc3MifQ.W5eXAH44Z5ZwKQTWM5kfPEnRfX1reCawlQnbyS8p3LY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjU0MjAzNDksInR5cGUiOiJhY2Nlc3MifQ.qERK4s_FtFXXssftJP76PZ5mEgw_335yHSMDNqqhxd4
 
 {
   "title": "Статья через REST Client",
@@ -47,11 +47,11 @@ POST http://127.0.0.1:8000/api/token/refresh/
 Content-Type: application/json
 
 {
-  "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjU0MzQ0ODYsInR5cGUiOiJyZWZyZXNoIn0.VCChiNCh-s7BnORElzxIVdkg57_zoR8Hg05dsqVkajg"
+  "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjU1MDY1MTgsInR5cGUiOiJyZWZyZXNoIn0.Sj32aSIbPme76ZvKMmn4-TjHfTopyK2_j7jNtOIQ3Xw"
 }
 
 
 
 ### 6. Проверка работы нового access токена
 GET http://127.0.0.1:8000/api/articles/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjUzNDg0MDMsInR5cGUiOiJhY2Nlc3MifQ.KnnKDNM7d2q3uNL6RKPxGy24gvzMlGiu3QKzOkLpokY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE3NjU0MjA0NDgsInR5cGUiOiJhY2Nlc3MifQ.K72Br6-USfKcDZdhtaoSF5QHrd2B4AoqONB09GNAMFI
